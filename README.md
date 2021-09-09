@@ -1,0 +1,1 @@
+# wsi-bitpay-integration
