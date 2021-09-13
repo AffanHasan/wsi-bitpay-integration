@@ -1,5 +1,10 @@
 const http = require('http');
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
 http.createServer((request, response) => {
   const { headers, method, url } = request;
   let body = [];
@@ -26,4 +31,4 @@ http.createServer((request, response) => {
     response.write(JSON.stringify(responseBody));
     response.end();
   });
-}).listen(8080);
+}).listen(port);
